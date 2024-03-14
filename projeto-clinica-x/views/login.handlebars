@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="author" content="X">
+    <meta name="theme-color" content="#00b8b4">
+    <title>{{titulo}}</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/styleLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="theme-color" content="#4DBA87">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="main">
+</head>
+
+
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+
+    <section id="home-servicos">
+        <div class="container">
+            <div class="bloco-form">
+                <p class="text-md">PORTAL DE EXAMES</p>
+                <form method="POST" action="/valida-login" class="cadastro-portal">
+                    <input type="text" id="usuario" name="usuario" placeholder="Seu usuário..." required>
+                    <input type="text" id="senha" name="senha" placeholder="Sua Senha..." required>
+                    <input type="submit" value="ACESSAR">
+                </form>
+                <p>{{msg}}</p>
+            </div>
+
+
+        </div>
+    </section>
+</body>
+
+</html>

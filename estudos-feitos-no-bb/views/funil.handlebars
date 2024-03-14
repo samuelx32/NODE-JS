@@ -1,0 +1,180 @@
+<div class="secao1">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 border-menu">
+    <h1 class="h2 titulo">Autorizações</h1>
+  </div>
+</div>
+
+<div class="estilo" style="overflow-y:auto; text-align:center;"></div>
+
+<div class="secao1">
+  <div id="inserir-cpf" class="">
+    <form method="post" action="/consulta-cpf2">
+      <input type="text" name="cpf" placeholder="Para iniciar digite um CPF sem zeros a esquerda">
+      <button class="btn btn-primary" type="submit">Consultar</button>
+    </form>
+    <div>
+      <p class="h2" style="text-align:center;">{{msg}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+{{#if clientes}}
+
+
+
+
+<div id="tabela-principal" class="secao1">
+
+  <table id="tabela" class="table-hover">
+    <tr class="" style="color:#ddd;">
+      <th>Estado</th>
+      <th>Número Sequencial</th>
+      <th>Número de Marcação</th>
+      <th>CPF</th>
+      <th>Data de Criação</th>
+      <th>Data de Validade</th>
+      <th>Código da Autorização</th>
+      <th>Operações</th>
+    </tr>
+    {{#clientes}}
+    {{#if (verificaV mostra)}}
+    <tr>
+      <td>
+
+        <div class="estado-{{situacao}}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill"
+            viewBox="0 0 16 16">
+            <path
+              d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+          </svg>
+        </div>
+
+      </td>
+      <td>{{num_sql}}</td>
+      <td>{{num_marc}}</td>
+      <td>{{cpf}}</td>
+      <td>{{data_cric}}</td>
+      <td>{{data_vld}}</td>
+      <td>{{cod_atz}}</td>
+      <td>
+        <form method="post" action="/consulta-atz#tabela-principal">
+          <input type="hidden" name="num_sql" value="{{num_sql}}">
+          <button class="btn btn-sm" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill"
+              viewBox="0 0 16 16">
+              <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+              <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+            </svg>
+
+          </button>
+        </form>
+      </td>
+    </tr>
+    {{/if}}
+    {{/clientes}}
+    
+  </table>
+
+</div>
+
+<div class="secao1">
+  <a href="/cad-atz" class="btn-mais">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-plus-square-fill"
+      viewBox="0 0 16 16">
+      <path
+        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+    </svg>
+
+  </a>
+</div>
+
+{{/if}}
+
+<div class="modal fade" id="exemplomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Resultados</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="consulta">
+          {{#if situacao}}
+
+          <div id="resultado">
+            <div class="estado-erro">
+              Situação: {{situacao}}
+              <p>
+              Data: {{est_data}}
+            </div>
+          </div>
+
+
+          {{/if}}
+
+          {{#if recursos}}
+          <table id="tabela-recurso" class="table-hover">
+            <thead>
+              <tr>
+                <th>Número</th>
+                <th>Tipo</th>
+                <th>Data</th>
+                <th>Identificador</th>
+              </tr>
+            </thead>
+            {{#recursos}}
+            <tbody>
+
+              <tr>
+                <td>{{num_rcs}}</td>
+                {{#if (conta tipo_rcs)}}
+                <td>Conta</td>
+                {{/if}}
+                {{#if (cartao tipo_rcs)}}
+                <td>Cartão</td>
+                {{/if}}
+                {{#if (emprestimo tipo_rcs)}}
+                <td>Empréstimo</td>
+                {{/if}}
+                {{#if (financiamento tipo_rcs)}}
+                <td>Financiamento</td>
+                {{/if}}
+                {{#if (recebiveis tipo_rcs)}}
+                <td>Recebíveis</td>
+                {{/if}}
+                {{#if (adiantamento tipo_rcs)}}
+                <td>Adiantamento</td>
+                {{/if}}
+                <td>{{data_vrf}}</td>
+                <td>{{idfc_rcs}}</td>
+              </tr>
+            </tbody>
+            {{/recursos}}
+          </table>
+
+          {{/if}}
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#if situacao}}
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+    $('#exemplomodal').modal('show');
+  })
+
+</script>
+
+{{/if}}

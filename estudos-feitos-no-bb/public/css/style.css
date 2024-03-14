@@ -1,0 +1,350 @@
+*{
+    border:0;
+    margin:0;
+}
+
+.font-cor{
+    color:aliceblue;
+}
+
+
+.campo{
+	width:100%;
+	height:3em;
+	border: 1.5px solid #D3D3D3;
+	margin:0.5em;
+}
+
+.botao{
+	width:25%;
+	height:2em;
+	float:right;
+	background-color: #27408B;
+	border: 1.5px solid #D3D3D3;
+	margin:0.5em;
+	margin-top:1em;
+	font-size:15px;
+	color:#F8F8FF;
+}
+
+.botao:hover{
+	border:0;
+}
+
+.botao2{
+	width:25%;
+	height:2em;
+	float:left;
+	background-color: #27408B;
+	border: 1.5px solid #D3D3D3;
+	margin:0.5em;
+	margin-top:1em;
+	font-size:15px;
+	color:#F8F8FF;
+}
+
+.botao2:hover{
+	border:0;
+}
+
+.titulo{
+    color:#424242;
+}
+
+body{
+    background-color: #FAFAFA;
+}
+
+#topo{
+    background-color: gold;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 60px -16px black;
+    height: 48px;
+}
+
+
+#topo ul{
+    margin-left:2%;
+}
+
+#topo div{
+    margin-right:2%;
+}
+
+#topo div button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#topo div button i{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+#topo a{
+    color:#151515;
+}
+.menu-lateral{
+    width:18%;
+    height:1400px;
+    background-color: black;
+    padding-top:1em;
+}
+.menu-lateral a{
+    color:#A4A4A4;
+    font-size:15px;
+}
+
+.menu-lateral a:hover{
+    color:#585858;
+}
+
+.menu-lateral .bbomberman{
+    font-size: 22px;
+    border-bottom:1px solid #424242;
+    
+}
+.corpo{
+    width:82%;
+}
+
+
+
+/*O código acima estiliza a Main juntamente com o Bootstrap*/
+
+
+#projetos{
+    color:aliceblue;
+}
+
+#painel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#painel .cor-menu{
+    color:#D3D3D3;
+}
+
+
+/*O código acima estiliza Projetos juntamente com o Bootstrap*/
+
+.secao1{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FAFAFA;
+    box-shadow: 1px 1px 1px 1px #2E2E2E;
+    margin-top:2em;
+    padding:1em;
+}
+
+#inserir-cpf{
+    width:45%;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#inserir-cpf form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#inserir-cpf form input{
+    width:35em;
+    margin-bottom:2em;
+    float:left;
+    height:2.4em;
+    border: 1px solid #D3D3D3;
+    box-shadow: 0px 1px #A9E2F3;
+    
+}
+
+#inserir-cpf form.botao{
+    float:left;
+}
+
+.modal-body{
+    width:100%;
+}
+
+#consulta{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.estilo{
+    width:100%;
+    margin: 0 auto;
+    float:center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-mais{
+    color:#2E2E2E;
+
+}
+
+
+
+.centro{
+    text-align: center;
+}
+
+.table-wrapper{
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.tabela-collapse{
+    border-collapse: collapse;
+}
+
+#tabela{
+    width:100%;
+    margin:2em 0em;
+    align-items: center;
+    text-align: center;
+}
+
+#tabela-recurso{
+    width:80%;
+    margin:2em 0em;
+    font-size: 16px;
+}
+
+#tabela tr{
+    border-bottom: 1px solid gray;
+}
+
+#tabela th{
+    font-size: 12px;
+    color:aliceblue;
+    padding: 4px 0px;
+    background-color: #0B3861;
+}
+
+#tabela td{
+    font-size: 12px;
+    padding:2px 0px;
+    color:#424242;
+}
+
+#tabela td form button:hover{
+    color:#6E6E6E;
+}
+
+
+
+#resultado{
+    text-align: center;
+    margin-top:1em;
+    width:30%;
+}
+
+#resultado p{
+    color:#424242;
+}
+
+#bbomberman{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.estado-solicitado{
+    color: #D7DF01;
+}
+
+.estado-aprovado{
+    color:#01DF01;
+}
+
+.estado-negado{
+    color: #DF0101;
+}
+
+.estado-erro{
+    color: black;
+}
+
+#velha-corpo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#jogo-da-velha{
+	width:100%;
+	margin:0 auto;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:center;
+	margin:2%;
+	padding:2%;
+}
+
+.bloco{
+	width:7em;
+	height: 3em;
+    margin:0 auto;
+	background-color:#6E6E6E;
+	text-align:center;
+	font-size:24px;
+	margin:5px;
+	box-shadow:3px 3px 3px #4B088A;
+	border:none;
+	cursor: pointer;
+}
+
+.bloco:hover{
+	background-color:#585858;
+}
+
+.bloco p{
+	color:#F2F2F2;
+    padding-top: 10px;
+}
+
+#recarregar{
+	width:100%;
+	text-align:center;
+}
+
+
+
+@media only screen and (max-width:780px){
+    .corpo{
+        width:100%;
+    }
+  }
